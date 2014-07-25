@@ -15,11 +15,13 @@ setup(
     packages=['dw'],  # can be find_packages()
     install_requires=[
         'Flask==0.10.1',
+        'enum34==1.0',
     ],
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'device-manager=weather.app:run'
+            'list_devices=dw.devices_manager.service:list_devices',
+            'devices_manager=dw.devices_manager.service:run_service'
         ],
     }
 )
