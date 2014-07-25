@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'list_devices=dw.devices_manager.service:list_devices',
-            'devices_manager=dw.devices_manager.service:run_service'
+            'devices_manager=dw.devices_manager.service:run_service',
+            'run_panel=dw.web_panel.app:run_panel'
         ],
     }
 )
