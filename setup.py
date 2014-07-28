@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from dw import __version__, __author__
 
 with open('README.md', 'r') as f:
@@ -12,10 +12,11 @@ setup(
     url='https://github.com/wikia-gregor/device-wall',
     author=__author__,
     author_email='grzegorz@wikia-inc.com',
-    packages=['dw'],  # can be find_packages()
+    packages=find_packages(),
     install_requires=[
         'Flask==0.10.1',
         'enum34==1.0',
+        'Twisted==14.0.0'
     ],
     include_package_data=True,
     entry_points={

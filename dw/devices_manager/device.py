@@ -19,12 +19,13 @@ class OsType(Enum):
 class Device():
     """Device model"""
 
-    def __init__(self, name, device_type, os_type, os_version):
+    def __init__(self, name, device_type, os_type, os_version, arch):
         self.name = name
         self.device_type = device_type  # simulator, phone, tablet
         self.os_type = os_type  # ios, android
         self.os_version = os_version
         self.serial_number = ''
+        self.arch = arch
         self.additional_info = {}
 
 

@@ -4,6 +4,18 @@ from subprocess import check_output
 import re
 
 
+class Instruments():
+
+    def __init__(self):
+        pass
+
+    def is_simulator(self, description_string):
+        pass
+
+    def is_device(self, description_string):
+        pass
+
+
 def testing_regex():
     dev_string = [
         'iPhone 5 Mr G. (v7.1.2) (abcdefghijklmnopqrstuvwxyz1234567890123x)',
