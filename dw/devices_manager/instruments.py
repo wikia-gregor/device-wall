@@ -1,3 +1,5 @@
+from dw.devices_manager.device import Device, Type, iPhone, Simulator, OsType
+
 __author__ = 'wikia-gregor'
 
 from subprocess import check_output
@@ -74,24 +76,29 @@ def instruments_read_devices():
     simulator_regex = re.compile(_simulator_regexp())
     device_regex = re.compile(_device_regexp())
 
+    devices = []
+
     for line in lines:
-        print('checking line: ' + line)
         dev_match = device_regex.match(line)
 
         if dev_match is not None:
-            device_from_match(dev_match)
+            devices.append(device_from_match(dev_match))
             continue
 
         sim_match = simulator_regex.match(line)
 
         if sim_match is not None:
-            # simulator_device_from_match(sim_match)
+            devices.append(simulator_device_from_match(sim_match))
             continue
+
+    return devices
 
 
 def device_from_match(match):
-    print('This is Device!')
+    device = iPhone(match.group('name'), match.group('uuid'), match.group('version'))
+    print('Device: ' + device.__repr__())
+    return device
 
 
 def simulator_device_from_match(match):
-    print('This is Simulator!')
+    return Simulator(match.group('name'), OsType.ios, match.group('version'))
