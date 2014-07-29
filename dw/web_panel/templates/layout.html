@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>{% block title %}Device Wall{% endblock %}</title>
 
     <link href="/static/vendors/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/dw.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+    <h1>Device Wall</h1>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#status" role="tab" data-toggle="tab">Status</a></li>
+        <li><a href="#devices" role="tab" data-toggle="tab">Devices</a></li>
+        <li><a href="#queue" role="tab" data-toggle="tab">Queue</a></li>
+        <li class="navbar-right">
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-cog"></span>
+            </button>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active panel panel-default" id="status">
+            Status panel
+        </div>
+        <div class="tab-pane panel panel-default" id="devices">
+            Devices panel
+        </div>
+        <div class="tab-pane panel panel-default" id="queue">
+            Testing Queue panel
+        </div>
+    </div>
+
     {% block content %}
+{#        <div class="panel panel-default">#}
+{#          <div class="panel-body">#}
+{#            Basic panel example#}
+{#          </div>#}
+{#        </div>#}
     {% endblock %}
+    </div>
 
     <script src="/static/vendors/js/jquery-1.11.1.min.js"></script>
     <script src="/static/vendors/js/bootstrap.min.js"></script>
